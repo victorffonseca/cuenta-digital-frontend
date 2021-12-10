@@ -1,0 +1,30 @@
+<br>
+<br>
+<h3>Cuentas registradas</h3>
+<br>
+
+<div class="table-responsive">
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Cédula</th>
+            <th>Nombres</th>
+            <th>Número de cuenta</th>
+            <th>Estado</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cuenta of cuentas">
+            <td>{{ cuenta.persona.cedula }}</td>
+            <td>{{ cuenta.persona.primerNombre + ' ' + cuenta.persona.primerApellido }}</td>
+            <td>{{ cuenta.id }}</td>
+            <td>{{ cuenta.estado | estado }}</td>
+            <td>
+                <button class="btn btn-info active" (click)="editarDatos(cuenta.id)">Editar</button>
+                <button class="btn btn-danger active" (click)="eliminarCuenta(cuenta.id)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>

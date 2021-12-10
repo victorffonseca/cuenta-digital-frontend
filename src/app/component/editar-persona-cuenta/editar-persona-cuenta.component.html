@@ -1,0 +1,31 @@
+<h2>Editar datos</h2> 
+
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+      <label for="profesion">Profesión</label>
+      <input type="text" class="form-control" id="profesion" required [(ngModel)]="cuenta.persona.profesion" name="profesion">
+  </div>
+
+  <div class="form-group">
+    <label for="trabajo">Trabajo</label>
+    <select class="form-control" id="trabajo" required [(ngModel)]="cuenta.persona.trabajo" name="trabajo">
+        <option value="Independiente">Independiente</option>
+        <option value="Empleado">Empleado</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="ingresos">Ingresos</label>
+    <input type="number" class="form-control" id="ingresos" required [(ngModel)]="cuenta.persona.ingresos" name="ingresos">
+  </div>
+
+  <div class="form-group">
+    <label for="egresos">Egresos</label>
+    <input type="number" class="form-control" id="egresos" required [(ngModel)]="cuenta.persona.egresos" name="egresos">
+  </div>
+
+  <br>
+  <button type="submit" class="btn btn-success">Guardar</button>
+</form>
+<br>
+<button (click)="volverALista()" class="btn btn-primary">Regresar</button>

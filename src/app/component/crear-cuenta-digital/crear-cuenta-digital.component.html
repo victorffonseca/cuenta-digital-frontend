@@ -1,0 +1,21 @@
+<br><br>
+<h3>Abrir cuenta de ahorros digital</h3>
+<br>
+<div>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="clave">Clave para la cuenta</label>
+            <input type="password" [pattern]="'^[0-9]{4}$'" class="form-control" id="clave" required [(ngModel)]="cuenta.clave" name="clave">
+        </div>
+
+        <div class="form-group">
+            <label for="persona">Titular de la cuenta</label>
+            <select class="form-control" id="persona" required [(ngModel)]="cuenta.persona" name="persona">
+                <option *ngFor="let persona of personas" [ngValue]="persona">{{ persona.primerNombre + ' ' + persona.primerApellido }}</option>
+            </select>
+        </div>
+
+        <br>
+        <button type="submit" class="btn btn-success">Crear cuenta</button>
+    </form>
+</div>
